@@ -24,7 +24,7 @@ BackEnd da SandBox de Simulação
 	instalando flask:
 		pip install Flask
 
-# niciando o projeto
+# Iniciando o projeto
 	Primeiro instale as dependencias
 	inicie o venv com o seguinte comando:
 	$ virtualenv .venv
