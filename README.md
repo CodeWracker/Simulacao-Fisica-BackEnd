@@ -23,6 +23,7 @@ BackEnd da SandBox de Simulação
 	flask
 	instalando flask:
 		pip install Flask
+		pip install -U flask-cors
 
 # Iniciando o projeto
 	Primeiro instale as dependencias
