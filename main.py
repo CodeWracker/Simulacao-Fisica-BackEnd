@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 pos = [
     {
         'id': 0,
@@ -10,7 +10,7 @@ pos = [
     },
     {
         'id':1,
-        'center[2]': [150, 150],
+        'center[2]': [50, 150],
         'radius': 2
     }
 ]
