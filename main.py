@@ -1,20 +1,44 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+
 app = Flask(__name__)
 CORS(app)
+
+cont = 0
 pos = [
     {
         'id': 0,
-        'center[2]': [100, 100],
-        'radius': 2
+        'center_x': 100,
+        'center_y': 100,
+        'radius': 20
     },
     {
-        'id':1,
-        'center[2]': [50, 150],
-        'radius': 2
+        'id': 1,
+        'center_x': 50,
+        'center_y': 150,
+        'radius': 20
     }
 ]
 
+
 @app.route('/')
-def home():
-    return jsonify(pos)
+def plus():
+    global cont
+    while True:
+        global pos
+        pos = [
+            {
+                'id': 0,
+                'center_x': 100 + cont,
+                'center_y': 100,
+                'radius': 20
+            },
+            {
+                'id': 1,
+                'center_x': 50 + cont,
+                'center_y': 150,
+                'radius': 20
+            }
+        ]
+        cont = cont + 1
+        return jsonify(pos)
