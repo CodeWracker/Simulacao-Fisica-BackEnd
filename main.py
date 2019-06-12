@@ -20,11 +20,16 @@ pos = [
     }
 ]
 
-
 @app.route('/')
 def plus():
     global cont
+
     while True:
+
+        
+        cont = cont + 2
+        if(cont>900):
+            cont = 0
         global pos
         pos = [
             {
@@ -40,5 +45,6 @@ def plus():
                 'radius': 20
             }
         ]
-        cont = cont + 1
+        
+        
         return jsonify(pos)
