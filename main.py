@@ -33,12 +33,13 @@ class Ball(object):
 bolas = []
 for i in range(quantBalls):
     bolas.append(Ball(50,10*i,i))
+for i in range(quantBalls):
+    infos["ball"].append(json.dumps(bolas[i].__dict__))
+    teste = json.dumps(bolas, default=obj_dict)
 
 @app.route('/')
 def plus():
-    for i in range(quantBalls):
-        infos["ball"].append(json.dumps(bolas[i].__dict__))
-        teste = json.dumps(bolas, default=obj_dict)
+    
     for i in range(quantBalls):
         bolas[i].move()
     print(teste)
